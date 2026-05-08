@@ -1,0 +1,1 @@
+ # session.pop("u",None)# specific deleteeion by name

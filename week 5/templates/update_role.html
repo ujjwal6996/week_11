@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Role</title>
+</head>
+<body>
+    <h2>Update Role</h2>
+    <form action="/update_role/{{this_role.id}}" method="post"> <!--iss(action waley) end point pe jayga submit kerney per     idhar ham data post ker rhey toh method=post dalna padega-->
+        <div>
+            <label for="role">Role Name:</label>
+            <input type="text" id="role" name="role" value={{this_role.role_name}}>
+        </div>
+        <div>
+            <input type="submit" value="update ">
+        </div>
+    </form>
+</body>
+</html>

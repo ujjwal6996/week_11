@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users for {{role}}</title>
+</head>
+<body>
+    <h2>Users who are {{role}}</h2>
+    {%if users%}
+    <table>
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>User ID</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for user in users%}<!--users is list of object-->
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+            {%endfor%}
+            <h3>No users found for this role</h3>
+        </tbody>
+        
+    </table>
+    {%else%}
+        <h3>No users found</h3>
+    {%endif%}
+    <a href="/"><button>GO HOME</button></a>
+    
+</body>
+</html>

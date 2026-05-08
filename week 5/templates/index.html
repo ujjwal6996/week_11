@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    Sr. No
+                </th>
+                <th>Role id</th>
+                <th>Role name</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for role in roles%}
+            <tr> 
+                    <td>{{loop.index}}</td><!--jinja provide kerta ye ,agar koi index beech se delete kea tab bhi sequence khrab nhi hoga-->
+                    <td>{{role.id}}</td>
+                    <td><a href="/user/{{role.role_name}}">{{role.role_name}}</a></td>
+                    
+                    <td>
+                        <a href="/update_role/{{role.id}}">Edit</a>
+                        <a href="/delete_role/{{role.id}}">Delete</a>
+                    </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <a href="/create_role"><button>Add role</button></a>
+</body>
+</html>
